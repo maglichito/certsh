@@ -10,8 +10,8 @@ from selenium.webdriver.firefox.options import Options
 
 # Checking if argument -t/--target is passed
 parser = argparse.ArgumentParser(prog='base_maker',
-                                 description='{Fore.LIGHTRED_EX}CERTSH - Automated procces of finding subdomains on crt.sh',
-                                 epilog='{Fore.YELLOW}Example: python3 certsh.py -t www.example.com',
+                                 description=f'{Fore.LIGHTRED_EX}CERTSH - Automated procces of finding subdomains on crt.sh',
+                                 epilog=f'{Fore.YELLOW}Example: python3 certsh.py -t www.example.com',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('-t','--target',required=True)
 args = parser.parse_args()
