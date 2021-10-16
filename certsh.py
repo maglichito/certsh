@@ -11,9 +11,7 @@ import warnings
 # Do not want to print warnings
 warnings.filterwarnings('ignore')
 
-# Checking if argument -t/--target is passed
-parser = argparse.ArgumentParser(prog='base_maker',
-                                 description=str(f'''{Fore.GREEN}
+logo = str(f'''{Fore.GREEN}
 OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~
 OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~
 OOOOOOOZOZ...,ZZZZZ=......~ZZZZ. ...IZZZ$........I$$$$$...,$$$$$.$$$$7$7.7$7777~
@@ -26,12 +24,18 @@ OOOOOO..ZZZZZZZZZZ..ZZZZZZZZZ..Z$Z..=ZZ$$$$Z..Z$$$$$$$$$$$$..$$?.=$$$77..7$7777~
 OOOOOO...OOZZZOZZZ..ZZZZZZZZZ..ZZZZ..,Z$$$$Z. $$$$$$?$$$$$$..$$I.?$$$7$,.7$7777~
 OOOOOOO.........ZZ.........ZZ..ZZZZZ...$$$$$. $$$$$$........$$$$.7$$$77~.777777~
 OOOOOOOOZOI,=OZZZZZO+:~=+IZZZZ$$ZZZZZ?:$$$$$$:$$$$$$$$$=~I7$$$$$?$$$$7$7?777777~
-OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~'''),
+OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~''')
+
+# Checking if argument -t/--target is passed
+parser = argparse.ArgumentParser(prog='base_maker',
+                                 description=logo,
                                  epilog=f'{Fore.YELLOW}Example: python certsh.py -t www.example.com',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('-t','--target',required=True)
 args = parser.parse_args()
 
+print(logo)
+print(f"\n")
 #Target
 target = args.target
 
