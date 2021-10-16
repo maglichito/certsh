@@ -22,7 +22,7 @@ target = args.target
 # Getting Chrome as a browser
 option = webdriver.ChromeOptions()
 option.add_argument('headless')
-browser = webdriver.Chrome('path/to/chromedriver',options=option)
+browser = webdriver.Chrome('./chromedriver',options=option)
 
 # URL
 u = 'https://crt.sh/'
