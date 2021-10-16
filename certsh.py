@@ -13,8 +13,21 @@ warnings.filterwarnings('ignore')
 
 # Checking if argument -t/--target is passed
 parser = argparse.ArgumentParser(prog='base_maker',
-                                 description=f'{Fore.LIGHTRED_EX}CERTSH - Automated procces of finding subdomains on crt.sh',
-                                 epilog=f'{Fore.YELLOW}Example: python3 certsh.py -t www.example.com',
+                                 description=str(f'''{Fore.GREEN}
+OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~
+OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~
+OOOOOOOZOZ...,ZZZZZ=......~ZZZZ. ...IZZZ$........I$$$$$...,$$$$$.$$$$7$7.7$7777~
+OOOOOOO........ZZZ... .....ZZZ........Z$=.... ...~$$$........$$$.7$$$77~.7$7777~
+OOOOZZ...OZZZZZZZZ..ZZZZZZZZZ..ZZZZZ$..Z$$$Z. $$$$$$..$$$$$$$$$?.=$$$77..7$7777~
+OOOOOO..ZZZZZZZZZZ..ZZZZZZZZZ..ZZZZZZ..Z$$$$..$$$$$$...$$$$$$$$?.,$$$7$..7$7777~
+OOOOZ...ZZZZZZZZZZ.......ZZZZ..ZZZZZ...Z$$$$..$$$$$$$... .=$$$$?.........7$7777~
+OOOOO...ZZZZZZZZZZ..,,,:ZZZZZ........:$$$$$Z..$$$$$$$$$$$....$$?.:$$$7$..7$7777~
+OOOOOO..ZZZZZZZZZZ..ZZZZZZZZZ..Z$Z..=ZZ$$$$Z..Z$$$$$$$$$$$$..$$?.=$$$77..7$7777~
+OOOOOO...OOZZZOZZZ..ZZZZZZZZZ..ZZZZ..,Z$$$$Z. $$$$$$?$$$$$$..$$I.?$$$7$,.7$7777~
+OOOOOOO.........ZZ.........ZZ..ZZZZZ...$$$$$. $$$$$$........$$$$.7$$$77~.777777~
+OOOOOOOOZOI,=OZZZZZO+:~=+IZZZZ$$ZZZZZ?:$$$$$$:$$$$$$$$$=~I7$$$$$?$$$$7$7?777777~
+OOOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$7$$$7$7777~'''),
+                                 epilog=f'{Fore.YELLOW}Example: python certsh.py -t www.example.com',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('-t','--target',required=True)
 args = parser.parse_args()
@@ -33,7 +46,7 @@ u = 'https://crt.sh/'
 # Opening browser and getting to url
 browser.get(u)
 
-argv = sys.argv[1:]
+# Bot doing the thing ;)
 def search():
     search_box = browser.find_element_by_xpath("//form/input[@type='text']")
     search_box.send_keys(target)
