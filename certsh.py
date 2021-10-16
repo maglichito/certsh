@@ -37,6 +37,7 @@ def search():
     search_box.submit()
     xpath = "/html/body/table[2]/tbody/tr/td/table/tbody/tr/td[5]"
     rows = browser.find_elements_by_xpath(xpath)
+    print("Hej")
     for row in rows[1:]:
         print(row.text)
 search()
