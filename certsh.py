@@ -5,6 +5,7 @@ from colorama import Fore, Back, Style
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 
 
 # Checking if argument -t/--target is passed
@@ -19,9 +20,9 @@ args = parser.parse_args()
 target = args.target
 
 # Getting Chrome as a browser
-option = webdriver.FirefoxOptions()
-option.add_argument('headless')
-browser = webdriver.Firefox(executable_path="./geckodriver",options=option)
+options = Options()
+options.headless = True
+browser = webdriver.Firefox(executable_path="./geckodriver",firefox_options=options)
 
 # URL
 u = 'https://crt.sh/'
