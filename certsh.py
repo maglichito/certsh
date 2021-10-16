@@ -20,9 +20,9 @@ args = parser.parse_args()
 target = args.target
 
 # Getting Chrome as a browser
-options = Options()
-options.headless = True
-browser = webdriver.Firefox(executable_path="./geckodriver",firefox_options=options)
+option = Options()
+option.headless = True
+browser = webdriver.Firefox(executable_path="./geckodriver",options=option)
 
 # URL
 u = 'https://crt.sh/'
