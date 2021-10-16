@@ -3,10 +3,13 @@ import argparse
 import colorama
 from colorama import Fore, Back, Style
 import selenium
-from selenium import webdriver   # for webdriver
-from selenium.webdriver.support.ui import WebDriverWait  # for implicit and explict waits
-from selenium.webdriver.chrome.options import Options  # for suppressing the browser
+from selenium import webdriver   
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
+import warnings
 
+# Do not want to print warnings
+warnings.filterwarnings('ignore')
 
 # Checking if argument -t/--target is passed
 parser = argparse.ArgumentParser(prog='base_maker',
@@ -37,7 +40,6 @@ def search():
     search_box.submit()
     xpath = "/html/body/table[2]/tbody/tr/td/table/tbody/tr/td[5]"
     rows = browser.find_elements_by_xpath(xpath)
-    print(rows)
     for row in rows[1:]:
-        print(row.text)
+        print(f"{Fore.RED}"+str(row.text))
 search()
