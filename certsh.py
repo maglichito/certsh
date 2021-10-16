@@ -20,7 +20,7 @@ target = args.target
 # Getting Chrome as a browser
 option = webdriver.FirefoxOptions()
 option.add_argument('headless')
-browser = webdriver.Firefox(executable_path='./geckodriver',options=option)
+browser = webdriver.Firefox(executable_path="./geckodriver",options=option)
 
 # URL
 u = 'https://crt.sh/'
