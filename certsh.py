@@ -1,4 +1,3 @@
-import chromedriver_autoinstaller
 import getopt, sys
 import argparse
 import colorama
@@ -16,12 +15,11 @@ args = parser.parse_args()
 
 #Target
 target = args.target
-chromedriver_autoinstaller.install()
 
 # Getting Chrome as a browser
 option = webdriver.ChromeOptions()
 option.add_argument('headless')
-browser = webdriver.Chrome(options=option)
+browser = webdriver.Chrome(executable_path="chromedriver.exe",options=option)
 
 # URL
 u = 'https://crt.sh/'
