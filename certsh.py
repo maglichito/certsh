@@ -3,9 +3,9 @@ import argparse
 import colorama
 from colorama import Fore, Back, Style
 import selenium
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.firefox.options import Options
+from selenium import webdriver   # for webdriver
+from selenium.webdriver.support.ui import WebDriverWait  # for implicit and explict waits
+from selenium.webdriver.chrome.options import Options  # for suppressing the browser
 
 
 # Checking if argument -t/--target is passed
@@ -20,9 +20,9 @@ args = parser.parse_args()
 target = args.target
 
 # Getting Chrome as a browser
-option = Options()
-option.headless = True
-browser = webdriver.Firefox(executable_path="./geckodriver",options=option)
+option = webdriver.ChromeOptions()
+option.add_argument('headless')
+browser = webdriver.Chrome('path/to/chromedriver',options=option)
 
 # URL
 u = 'https://crt.sh/'
